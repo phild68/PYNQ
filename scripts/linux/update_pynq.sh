@@ -5,7 +5,7 @@ set -e
 UPDATEPYNQ_DIR=/home/xilinx/scripts
 REPO_DIR=/home/xilinx/pynq_git
 MAKEFILE_PATH=${REPO_DIR}/scripts/linux/makefile.pynq
-PYNQ_REPO=https://github.com/Xilinx/PYNQ.git
+PYNQ_REPO=https://github.com/phild68/PYNQ.git
 
 
 if ! [ $(id -u) = 0 ]; then
@@ -77,7 +77,7 @@ function init_repo()
         mkdir $REPO_DIR -p
         git clone  ${PYNQ_REPO} ${REPO_DIR}
         cd ${REPO_DIR}
-        git checkout --track origin/${_repo_branch}
+        git checkout ${_repo_branch}
     fi
 
     cd ${REPO_DIR}
