@@ -67,7 +67,7 @@ function init_repo()
         echo ""
         echo "Github Repo Detected. Pulling latest changes from upstream.."
         cd ${REPO_DIR}
-        git checkout --track origin/${_repo_branch} || git checkout -f ${_repo_branch}
+        git checkout -f ${_repo_branch}
         git fetch
         git pull 
         echo ""
