@@ -1,9 +1,6 @@
 **********************
-Useful Reference Links
+Useful Links
 **********************
-
-.. contents:: Table of Contents
-   :depth: 2
 
 Git
 ===
@@ -21,7 +18,7 @@ PUTTY (terminal emulation software)
 
 Pynq Technical support
 ======================
-* `Pynq Technical support <https://github.com/Xilinx/PYNQ/issues>`_
+* `Pynq Technical support <http://www.pynq.io/support.html>`_
 
 Python built-in functions
 =========================
