@@ -1,4 +1,5 @@
 #!/bin/bash
+sleep 2
 
 image_file=$1
 image_dir=$2

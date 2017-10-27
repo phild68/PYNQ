@@ -29,7 +29,7 @@ multistrap
 git
 lib32z1
 lib32ncurses5
-lib32bz2-1.0
+libbz2-1.0:i386
 lib32stdc++6
 libgnutls-dev
 libssl-dev
@@ -44,15 +44,25 @@ sudo apt-get install -y $PACKAGES
 mkdir tools
 cd tools/
 
-wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.22.0.tar.bz2
+if [ ! -e "crosstool-ng-1.22.0.tar.bz2" ]; then
+	wget http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.22.0.tar.bz2
+else
+	echo "Skipping download of crosstool-ng-1.22.0.tar.bz2 as we already have it"
+fi
 tar -xf crosstool-ng-1.22.0.tar.bz2
 cd crosstool-ng/
+export SAVED_LD_LIBRARY_PATH=${LD_LIBRARY_PATH}
+unset LD_LIBRARY_PATH
 ./configure --prefix=/opt/crosstool-ng
 make
 sudo make install
 cd ..
 
-wget http://wiki.qemu-project.org/download/qemu-2.8.0.tar.bz2
+if [ ! -e "qemu-2.8.0.tar.bz2" ]; then
+	wget http://wiki.qemu-project.org/download/qemu-2.8.0.tar.bz2
+else
+	echo "Skipping download of qemu-2.8.0.tar.bz2 as we already have it"
+fi
 tar -xf qemu-2.8.0.tar.bz2
 cd qemu-2.8.0
 ./configure --target-list=arm-linux-user --prefix=/opt/qemu --static
